@@ -1,4 +1,17 @@
 {% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+{% endblock %}
+
+{% trans_default_domain 'login' %}
+
+{% block header %}
+    <div class="container">
+        <a class="waves-effect waves-light btn right light-blue darken-3">{{ 'login.register-button' |trans }}</a>
+    </div>
+{% endblock %}
+
 {% block body %}
     {% if app.request.hasPreviousSession %}
         {% for type, messages in app.session.flashbag.all() %}
@@ -9,9 +22,10 @@
             {% endfor %}
         {% endfor %}
     {% endif %}
-
-    <div>
-        {% block fos_user_content %}
-        {% endblock fos_user_content %}
+    <div class="valign-wrapper login">
+        <div class="container">
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
     </div>
 {% endblock %}
