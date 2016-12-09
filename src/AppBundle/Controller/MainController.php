@@ -21,6 +21,11 @@ class MainController extends Controller
 
     public function indexAction()
     {
-        return $this->render('AppBundle:Main:index.html.twig');
+        if($this->getUser()){
+            return $this->render('AppBundle:Main:index.html.twig');
+        }else{
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
     }
 }
