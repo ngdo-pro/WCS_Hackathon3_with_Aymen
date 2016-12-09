@@ -1,20 +1,31 @@
+{% trans_default_domain 'homepage' %}
 <div class="navbar-fixed">
     <nav class="light-blue darken-2">
         <div class="nav-wrapper container">
             <a href="#" class="brand-logo right"><img src="{{ asset('img/faviconInseap.png') }}" class="img-responsive logo" /></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
+            <ul class="left hide-on-med-and-down">
+                <li><a href="{{ path('fos_user_registration_register') }}">{{ 'menu.register' |trans }}</a></li>
+                <li><a href="#">{{ 'menu.faq' |trans }}</a></li>
+                <!-- Localization -->
+                {% if app.request.locale == 'fr' %}
+                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}" class="red-text">En</a></li>
+                {% else %}
+                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}" class="red-text">Fr</a></li>
+                {% endif %}
+                <!-- End of Localization -->
             </ul>
         </div>
     </nav>
 </div>
 <ul class="side-nav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
+    <li><a href="{{ path('fos_user_registration_register') }}">{{ 'menu.register' |trans }}</a></li>
+    <li><a href="#">{{ 'menu.faq' |trans }}</a></li>
+    <!-- Localization -->
+    {% if app.request.locale == 'fr' %}
+        <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}" class="red-text">En</a></li>
+    {% else %}
+        <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}" class="red-text">Fr</a></li>
+    {% endif %}
+    <!-- End of Localization -->
 </ul>
