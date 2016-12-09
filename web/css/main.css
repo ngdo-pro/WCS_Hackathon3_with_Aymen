@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.logo{
+    border-radius: 10%;
+    height: 40px;
+    margin-top: 8px;
+}
+
+main {
+    flex: 1 0 auto;
+}
