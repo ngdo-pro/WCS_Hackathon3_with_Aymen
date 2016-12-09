@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'homepage' %}
+{% block body %}
+    <h1>{{ 'page.title' |trans}}</h1>
+    {% block content %}
+    {% endblock %}
+
+{% endblock %}
