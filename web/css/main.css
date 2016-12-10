@@ -13,35 +13,3 @@ body {
 main {
     flex: 1 0 auto;
 }
-
-
-/* Bloc Lien Homepage */
-
-.block_service{
-    height: 20vh;
-    width: 90%;
-    text-align: center;
-    padding-top: 2vh;
-    margin: 15px auto;
-    background-repeat: round;
-    background-size: cover;
-    color: dodgerblue;
-}
-.block_title {
-    width: 70%;
-    margin: 15px auto;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-}
-.food
-{
-    background-image: url(../img/foods.jpg);
-}
-.cab
-{
-    background-image: url(../img/taxi.jpg);
-}
-.castle
-{
-    background-image: url(../img/castle.jpg);
-}

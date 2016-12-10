@@ -1,25 +1,28 @@
 {% extends '@App/layout.html.twig' %}
 
+ {% block stylesheets %}
+     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+ {% endblock %}
+
 {% trans_default_domain 'homepage' %}
 {% block content %}
-    <h2>this is the index</h2>
 
-    <a href="">
-        <div class="block_service castle">
-            <h3 class="block_title"># Castle</h3>
-        </div>
+    <a href="#">
+        <section id="castle" class="valign-wrapper">
+            <h3 class="valign">#Homeseadd</h3>
+        </section>
     </a>
 
-    <a href="">
-        <div class="block_service food">
-            <h3 class="block_title"># FoodSead</h3>
-        </div>
+    <a href="#">
+        <section id="cab" class="valign-wrapper">
+            <h3 class="valign">#Cabseadd</h3>
+        </section>
     </a>
 
-    <a href="">
-        <div class="block_service cab">
-            <h3 class="block_title"># CabSead</h3>
-        </div>
+    <a href="#">
+        <section id="food" class="valign-wrapper last">
+            <h3 class="valign">#Foodseadd</h3>
+        </section>
     </a>
 
 {% endblock %}
