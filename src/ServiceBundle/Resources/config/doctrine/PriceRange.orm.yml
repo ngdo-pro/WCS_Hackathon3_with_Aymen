@@ -1,0 +1,28 @@
+ServiceBundle\Entity\PriceRange:
+    type: entity
+    table: null
+    repositoryClass: ServiceBundle\Repository\PriceRangeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        low:
+            type: string
+            length: 255
+        medium:
+            type: string
+            length: 255
+        high:
+            type: string
+            length: 255
+    manyToOne:
+        service:
+            targetEntity: ServiceBundle\Entity\Service
+            inversedBy: prices_range
+            joinColumn:
+                name: serviceId
+                referencedColumnName: id
+    lifecycleCallbacks: {  }
