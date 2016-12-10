@@ -1,18 +1,20 @@
 <?php
 
 namespace UserBundle\Entity;
-
+use FOS\UserBundle\Model\User as BaseUser;
 /**
  * User
  */
-class User
+class User extends BaseUser
 {
     /**
      * @var int
      */
     protected $id;
 
+    protected $lastname;
 
+    protected $firstname;
     /**
      * Get id
      *
@@ -23,4 +25,29 @@ class User
         return $this->id;
     }
 
+
+
+    /**
+     * Set lastname
+     *
+     * @param string $lastname
+     *
+     * @return User
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * Get lastname
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
 }
