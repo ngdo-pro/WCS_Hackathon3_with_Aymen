@@ -3,6 +3,25 @@
 {% trans_default_domain 'homepage' %}
 {% block content %}
     <h2>this is the index</h2>
+
+    <a href="">
+        <div class="block_service food">
+            <h3 class="block_title"># FoodSead</h3>
+        </div>
+    </a>
+
+    <a href="">
+        <div class="block_service cab">
+            <h3 class="block_title"># CabSead</h3>
+        </div>
+    </a>
+
+    <a href="">
+        <div class="block_service castle">
+            <h3 class="block_title"># Castle</h3>
+        </div>
+    </a>
+
     <div>
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
