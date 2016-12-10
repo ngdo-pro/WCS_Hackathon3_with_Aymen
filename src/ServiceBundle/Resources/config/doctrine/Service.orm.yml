@@ -1,0 +1,52 @@
+ServiceBundle\Entity\Service:
+    type: entity
+    table: null
+    repositoryClass: ServiceBundle\Repository\ServiceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        address:
+            type: text
+        phoneNumber:
+            type: string
+            length: '50'
+        email:
+            type: string
+            length: 255
+            nullable: true
+        description:
+            type: text
+        likes:
+            type: integer
+        menuImg:
+            type: string
+            length: 255
+            nullable: true
+        discount:
+            type: integer
+            nullable: true
+        specialOffer:
+            type: boolean
+        createdAt:
+            type: datetime
+    manyToOne:
+        service_provider:
+            targetEntity: ServiceBundle\Entity\ServiceProvider
+            joinColumn:
+                name: serviceProviderId
+                referencedColumnName: id
+        price_range:
+            targetEntity: ServiceBundle\Entity\PriceRange
+            inversedBy: services
+            joinColumn:
+                name: priceRangeId
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,5 @@
+easy_admin:
+    entities:
+        - ServiceBundle\Entity\ServiceProvider
+        - ServiceBundle\Entity\Service
+        - ServiceBundle\Entity\PriceRange

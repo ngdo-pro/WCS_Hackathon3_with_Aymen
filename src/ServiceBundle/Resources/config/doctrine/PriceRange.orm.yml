@@ -1,0 +1,19 @@
+ServiceBundle\Entity\PriceRange:
+    type: entity
+    table: null
+    repositoryClass: ServiceBundle\Repository\PriceRangeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        price:
+            type: string
+            length: 255
+    oneToMany:
+        services:
+            targetEntity: ServiceBundle\Entity\Service
+            mappedBy: price_range
+    lifecycleCallbacks: {  }
