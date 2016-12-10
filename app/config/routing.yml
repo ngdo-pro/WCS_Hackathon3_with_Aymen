@@ -1,6 +1,8 @@
 service:
     resource: "@ServiceBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    requirements:
+        _locale: "%app.locales%"
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
