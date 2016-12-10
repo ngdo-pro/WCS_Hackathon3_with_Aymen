@@ -12,8 +12,14 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @var string
+     */
     protected $lastname;
 
+    /**
+     * @var string
+     */
     protected $firstname;
 
     /**
@@ -83,7 +89,7 @@ class User extends BaseUser
         $testMail = explode(".", $userEmail[1]);
         if ($testMail[0] == 'insead') {
             $this->setUsername($email);
-            $this->setFirstName($userData[0]);
+            $this->setFirstname($userData[0]);
             $this->setLastname($userEmail[0]);
         }
         else {
