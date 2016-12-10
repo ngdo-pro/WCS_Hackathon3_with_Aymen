@@ -1,0 +1,29 @@
+CabBundle\Entity\Course:
+    type: entity
+    table: null
+    repositoryClass: CabBundle\Repository\CourseRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        departureDate:
+            type: datetime
+        seatsAvailable:
+            type: integer
+    lifecycleCallbacks: {  }
+    manyToOne:
+        departure:
+            targetEntity: CabBundle\Entity\Places
+            inversedBy: departures
+            joinColumn:
+                name: departure
+                referenceColumnName: name
+        arrival:
+            targetEntity: CabBundle\Entity\Places
+            inversedBy: arrivals
+            joinColumn:
+                name: arrival
+                referenceColumnName: name

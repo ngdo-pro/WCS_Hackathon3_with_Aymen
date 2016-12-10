@@ -1,0 +1,84 @@
+<?php
+
+namespace CabBundle\Entity;
+
+/**
+ * Course
+ */
+class Course
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     */
+    private $departureDate;
+
+    /**
+     * @var int
+     */
+    private $seatsAvailable;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set departureDate
+     *
+     * @param \DateTime $departureDate
+     *
+     * @return Course
+     */
+    public function setDepartureDate($departureDate)
+    {
+        $this->departureDate = $departureDate;
+
+        return $this;
+    }
+
+    /**
+     * Get departureDate
+     *
+     * @return \DateTime
+     */
+    public function getDepartureDate()
+    {
+        return $this->departureDate;
+    }
+
+    /**
+     * Set seatsAvailable
+     *
+     * @param integer $seatsAvailable
+     *
+     * @return Course
+     */
+    public function setSeatsAvailable($seatsAvailable)
+    {
+        $this->seatsAvailable = $seatsAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Get seatsAvailable
+     *
+     * @return int
+     */
+    public function getSeatsAvailable()
+    {
+        return $this->seatsAvailable;
+    }
+}
+

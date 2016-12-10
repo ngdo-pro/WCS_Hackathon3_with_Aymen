@@ -1,0 +1,22 @@
+CabBundle\Entity\Places:
+    type: entity
+    table: null
+    repositoryClass: CabBundle\Repository\PlacesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+    oneToMany:
+        departures:
+            targetEntity: CabBundle\Entity\Course
+            mappedBy: departure
+        arrivals:
+            targetEntity: CabBundle\Entity\Course
+            mappedBy: arrival

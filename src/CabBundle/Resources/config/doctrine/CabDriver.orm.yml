@@ -1,0 +1,27 @@
+CabBundle\Entity\CabDriver:
+    type: entity
+    table: null
+    repositoryClass: CabBundle\Repository\CabDriverRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        tel1:
+            type: string
+            length: 255
+        tel2:
+            type: string
+            length: 255
+            nullable: true
+        email:
+            type: string
+            length: 255
+        creditCardAccepted:
+            type: boolean
+    lifecycleCallbacks: {  }
