@@ -26,6 +26,7 @@ main {
     background-repeat: round;
     background-size: cover;
     color: dodgerblue;
+    border-radius: 10px;
 }
 .block_title {
     width: 70%;
