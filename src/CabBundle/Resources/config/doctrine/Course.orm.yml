@@ -10,7 +10,9 @@ CabBundle\Entity\Course:
                 strategy: AUTO
     fields:
         departureDate:
-            type: datetime
+            type: date
+        departureTime:
+            type: time
         seatsAvailable:
             type: integer
     lifecycleCallbacks: {  }

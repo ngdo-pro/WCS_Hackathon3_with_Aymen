@@ -1,6 +1,8 @@
 cab:
     resource: "@CabBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    requirements:
+        _locale: "%app.locales%"
 
 service:
     resource: "@ServiceBundle/Resources/config/routing.yml"

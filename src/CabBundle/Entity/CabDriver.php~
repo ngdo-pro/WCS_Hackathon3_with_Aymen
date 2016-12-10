@@ -168,4 +168,3 @@ class CabDriver
         return $this->creditCardAccepted;
     }
 }
-
