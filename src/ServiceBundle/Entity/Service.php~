@@ -341,4 +341,84 @@ class Service
     {
         return $this->service_provider;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $prices_range;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->prices_range = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add pricesRange
+     *
+     * @param \ServiceBundle\Entity\PriceRange $pricesRange
+     *
+     * @return Service
+     */
+    public function addPricesRange(\ServiceBundle\Entity\PriceRange $pricesRange)
+    {
+        $this->prices_range[] = $pricesRange;
+
+        return $this;
+    }
+
+    /**
+     * Remove pricesRange
+     *
+     * @param \ServiceBundle\Entity\PriceRange $pricesRange
+     */
+    public function removePricesRange(\ServiceBundle\Entity\PriceRange $pricesRange)
+    {
+        $this->prices_range->removeElement($pricesRange);
+    }
+
+    /**
+     * Get pricesRange
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPricesRange()
+    {
+        return $this->prices_range;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+    /**
+     * @var \ServiceBundle\Entity\PriceRange
+     */
+    private $price_range;
+
+
+    /**
+     * Set priceRange
+     *
+     * @param \ServiceBundle\Entity\PriceRange $priceRange
+     *
+     * @return Service
+     */
+    public function setPriceRange(\ServiceBundle\Entity\PriceRange $priceRange = null)
+    {
+        $this->price_range = $priceRange;
+
+        return $this;
+    }
+
+    /**
+     * Get priceRange
+     *
+     * @return \ServiceBundle\Entity\PriceRange
+     */
+    public function getPriceRange()
+    {
+        return $this->price_range;
+    }
 }

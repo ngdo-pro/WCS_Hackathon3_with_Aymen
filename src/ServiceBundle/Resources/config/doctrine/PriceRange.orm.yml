@@ -9,20 +9,11 @@ ServiceBundle\Entity\PriceRange:
             generator:
                 strategy: AUTO
     fields:
-        low:
+        price:
             type: string
             length: 255
-        medium:
-            type: string
-            length: 255
-        high:
-            type: string
-            length: 255
-    manyToOne:
-        service:
+    oneToMany:
+        services:
             targetEntity: ServiceBundle\Entity\Service
-            inversedBy: prices_range
-            joinColumn:
-                name: serviceId
-                referencedColumnName: id
+            mappedBy: price_range
     lifecycleCallbacks: {  }

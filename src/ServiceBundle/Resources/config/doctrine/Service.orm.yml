@@ -43,8 +43,10 @@ ServiceBundle\Entity\Service:
             joinColumn:
                 name: serviceProviderId
                 referencedColumnName: id
-    oneToMany:
-        prices_range:
+        price_range:
             targetEntity: ServiceBundle\Entity\PriceRange
-            mappedBy: service
+            inversedBy: services
+            joinColumn:
+                name: priceRangeId
+                referencedColumnName: id
     lifecycleCallbacks: {  }

@@ -387,4 +387,38 @@ class Service
     {
         return $this->prices_range;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+    /**
+     * @var \ServiceBundle\Entity\PriceRange
+     */
+    private $price_range;
+
+
+    /**
+     * Set priceRange
+     *
+     * @param \ServiceBundle\Entity\PriceRange $priceRange
+     *
+     * @return Service
+     */
+    public function setPriceRange(\ServiceBundle\Entity\PriceRange $priceRange = null)
+    {
+        $this->price_range = $priceRange;
+
+        return $this;
+    }
+
+    /**
+     * Get priceRange
+     *
+     * @return \ServiceBundle\Entity\PriceRange
+     */
+    public function getPriceRange()
+    {
+        return $this->price_range;
+    }
 }
