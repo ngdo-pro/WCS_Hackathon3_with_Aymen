@@ -2,56 +2,6 @@
 
 {% block body %}
     <h1>Services list</h1>
+    {{ dump(services) }}
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phonenumber</th>
-                <th>Email</th>
-                <th>Description</th>
-                <th>Likes</th>
-                <th>Menuimg</th>
-                <th>Discount</th>
-                <th>Specialoffer</th>
-                <th>Createdat</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for service in services %}
-            <tr>
-                <td><a href="{{ path('service_show', { 'id': service.id }) }}">{{ service.id }}</a></td>
-                <td>{{ service.name }}</td>
-                <td>{{ service.address }}</td>
-                <td>{{ service.phoneNumber }}</td>
-                <td>{{ service.email }}</td>
-                <td>{{ service.description }}</td>
-                <td>{{ service.likes }}</td>
-                <td>{{ service.menuImg }}</td>
-                <td>{{ service.discount }}</td>
-                <td>{% if service.specialOffer %}Yes{% else %}No{% endif %}</td>
-                <td>{% if service.createdAt %}{{ service.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('service_show', { 'id': service.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('service_edit', { 'id': service.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('service_new') }}">Create a new service</a>
-        </li>
-    </ul>
 {% endblock %}
