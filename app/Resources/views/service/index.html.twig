@@ -6,19 +6,15 @@
 
 {% trans_default_domain 'service' %}
 {% block body %}
-    <a href="{{ path('service_index', {'name': 'Restaurant'}) }}">
-        <section id="food" class="valign-wrapper last">
-            <h3 class="valign">{{ 'homepage.food-hashtag' |trans({}, 'homepage') }}</h3>
-        </section>
-    </a>
+    <section id="food" class="valign-wrapper last">
+        <h3 class="valign">{{ 'homepage.food-hashtag' |trans({}, 'homepage') }}</h3>
+    </section>
     <section id="serviceList">
     <div class="row">
-    {% for i in 1..100 %}
     {% for service in services %}
         <div class="col s10 offset-s1 z-depth-3 rowList">
             {{ service.name }}
         </div>
-    {% endfor %}
     {% endfor %}
     </div>
     </section>
