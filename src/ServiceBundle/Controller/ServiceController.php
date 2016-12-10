@@ -3,6 +3,7 @@
 namespace ServiceBundle\Controller;
 
 use ServiceBundle\Entity\Service;
+use ServiceBundle\Entity\ServiceProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -16,11 +17,11 @@ class ServiceController extends Controller
      * Lists all service entities.
      *
      */
-    public function indexAction()
+    public function indexAction(ServiceProvider $serviceProvider)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $services = $em->getRepository('ServiceBundle:Service')->findAll();
+        $services = $em->getRepository('ServiceBundle:Service')->findBy(array('service_provider' => $serviceProvider->getId()));
 
         return $this->render('service/index.html.twig', array(
             'services' => $services,

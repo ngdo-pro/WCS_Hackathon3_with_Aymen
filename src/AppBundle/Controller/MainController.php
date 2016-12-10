@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use ServiceBundle\Entity\ServiceProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
