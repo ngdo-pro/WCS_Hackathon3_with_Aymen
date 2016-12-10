@@ -1,3 +1,13 @@
+cab:
+    resource: "@CabBundle/Resources/config/routing.yml"
+    prefix:   /
+
+service:
+    resource: "@ServiceBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}
+    requirements:
+        _locale: "%app.locales%"
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
     prefix:   /{_locale}
@@ -7,3 +17,10 @@ fos_user:
 app:
     resource: "@AppBundle/Resources/config/routing.yml"
     prefix:   /
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/admin
+    requirements:
+        _locale: "%app.locales%"

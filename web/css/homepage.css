@@ -1,0 +1,53 @@
+section{
+    height: 33vh;
+    position: relative;
+    border-bottom: 1px solid #0288d1;
+}
+
+section.last{
+    border-bottom: none;
+}
+
+a{
+    color: #ffdd00;
+    text-transform: uppercase;
+}
+
+h3{
+    font-weight: bold;
+    margin: auto;
+    text-shadow: 2px 2px 2px black;
+}
+
+section::before
+{
+    background-size: cover;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    width: 100%;
+    z-index: -1;
+}
+
+#castle::before{
+    background-image: url(../img/castle.jpg);
+}
+
+#cab::before
+{
+    background-image: url(../img/taxi.jpg);
+}
+
+#food::before
+{
+    background-image: url(../img/foods.jpg);
+}
+

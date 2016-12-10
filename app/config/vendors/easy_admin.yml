@@ -1,0 +1,8 @@
+easy_admin:
+    entities:
+        - ServiceBundle\Entity\ServiceProvider
+        - ServiceBundle\Entity\Service
+        - ServiceBundle\Entity\PriceRange
+        - CabBundle\Entity\CabDriver
+        - CabBundle\Entity\Course
+        - CabBundle\Entity\Places

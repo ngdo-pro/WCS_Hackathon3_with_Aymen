@@ -1,0 +1,16 @@
+ServiceBundle\Entity\ServiceProvider:
+    type: entity
+    table: null
+    repositoryClass: ServiceBundle\Repository\ServiceProviderRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+    lifecycleCallbacks: {  }
