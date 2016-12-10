@@ -1,0 +1,44 @@
+section:first-child{
+    height: 15vh;
+    position: relative;
+}
+
+a{
+    color: #ffdd00;
+    text-transform: uppercase;
+}
+
+h3{
+    font-weight: bold;
+    margin: auto;
+    text-shadow: 2px 2px 2px black;
+    z-index: 2;
+}
+
+#serviceList{
+    margin-top: 5vh;
+}
+
+.row .col{
+    padding: 20px;
+}
+
+main{
+    background: url(../img/foods.jpg) fixed;
+    background-size: cover;
+    z-index: 1;
+}
+
+.rowList{
+    background: #dddddd;
+    cursor: pointer;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    -ms-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s;
+}
+
+.rowList:hover{
+    background: #ffffff;
+}

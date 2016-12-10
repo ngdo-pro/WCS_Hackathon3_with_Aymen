@@ -421,4 +421,33 @@ class Service
     {
         return $this->price_range;
     }
+    /**
+     * @var string
+     */
+    private $category;
+
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     *
+     * @return Service
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }
