@@ -31,4 +31,10 @@ HomeBundle\Entity\Rent:
             length: 255
         english:
             type: boolean
+    manyToOne:
+        owner_type:
+            targetEntity: HomeBundle\Entity\OwnerType
+            joinColumn:
+                name: ownerTypeId
+                referencedColumnName: id
     lifecycleCallbacks: {  }
