@@ -254,4 +254,33 @@ class Rent
     {
         return $this->english;
     }
+    /**
+     * @var integer
+     */
+    private $monthlyRentPrice;
+
+
+    /**
+     * Set monthlyRentPrice
+     *
+     * @param integer $monthlyRentPrice
+     *
+     * @return Rent
+     */
+    public function setMonthlyRentPrice($monthlyRentPrice)
+    {
+        $this->monthlyRentPrice = $monthlyRentPrice;
+
+        return $this;
+    }
+
+    /**
+     * Get monthlyRentPrice
+     *
+     * @return integer
+     */
+    public function getMonthlyRentPrice()
+    {
+        return $this->monthlyRentPrice;
+    }
 }

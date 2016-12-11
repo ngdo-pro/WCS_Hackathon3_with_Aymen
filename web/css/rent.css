@@ -34,11 +34,11 @@ main{
     background: #ffffff;
 }
 
-.service-name{
+.rent-name{
 
 }
 
-.service-infos{
+.rent-infos{
     margin: 0;
     position: relative;
 }
@@ -56,11 +56,11 @@ main{
 }
 
 .material-icons{
-    margin-right: 0;
+    margin-left: 0;
 }
 
 .likes-list{
-    margin-left: 0;
+    margin-right: 0;
 }
 
 .category-list{
@@ -76,7 +76,7 @@ main{
     margin-bottom: 0;
 }
 
-.service-infos-modal{
+.rent-infos-modal{
     padding: 10px 0;
     align-items: center;
     justify-content: center;

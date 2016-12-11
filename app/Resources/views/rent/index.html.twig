@@ -18,9 +18,9 @@
                             <span class="left">{{ rent.name }}</span>
                         </div>
                         <div class="row rent-infos valign-wrapper">
-                            <div class="category-list amber darken-1 valign">{{ rent.size }}</div>
-                            <i class="material-icons valign light-blue darken-2 white-text">favorite_border</i>
+                            <div class="category-list amber darken-1 valign">{{ rent.size }} m²</div>
                             <div class="likes-list light-blue darken-2 white-text valign">{{ rent.monthlyRentPrice }}</div>
+                            <i class="material-icons valign light-blue darken-2 white-text">euro_symbol</i>
                         </div>
                     </div>
                 </a>
@@ -31,9 +31,8 @@
                         </div>
                         <div class="row rent-infos-modal valign-wrapper">
                             <div class="category-list amber darken-1 valign">{{ rent.size |capitalize }}</div>
-                            <i class="material-icons valign light-blue darken-2 white-text">favorite_border</i>
                             <div class="likes-list light-blue darken-2 white-text valign">{{ rent.monthlyRentPrice }}</div>
-
+                            <i class="material-icons valign light-blue darken-2 white-text">euro_symbol</i>
                         </div>
                         <div class="row">
                             <p class="col s12">{{ rent.address }}</p>
