@@ -51,33 +51,5 @@ class OwnerType
     {
         return $this->title;
     }
-    /**
-     * @var \HomeBundle\Entity\Rent
-     */
-    private $rent;
-
-
-    /**
-     * Set rent
-     *
-     * @param \HomeBundle\Entity\Rent $rent
-     *
-     * @return OwnerType
-     */
-    public function setRent(\HomeBundle\Entity\Rent $rent = null)
-    {
-        $this->rent = $rent;
-
-        return $this;
-    }
-
-    /**
-     * Get rent
-     *
-     * @return \HomeBundle\Entity\Rent
-     */
-    public function getRent()
-    {
-        return $this->rent;
-    }
 }
+

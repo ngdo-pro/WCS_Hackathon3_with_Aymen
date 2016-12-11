@@ -12,4 +12,10 @@ HomeBundle\Entity\OwnerType:
         title:
             type: string
             length: 255
+    manyToOne:
+        rent:
+            targetEntity: HomeBundle\Entity\Rent
+            joinColumn:
+                name: rentId
+                referencedColumnName: id
     lifecycleCallbacks: {  }

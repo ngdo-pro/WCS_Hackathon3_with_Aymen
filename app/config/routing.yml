@@ -1,6 +1,8 @@
 home:
     resource: "@HomeBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}/rent/
+    requirements:
+        _locale: "%app.locales%"
 
 service:
     resource: "@ServiceBundle/Resources/config/routing.yml"
