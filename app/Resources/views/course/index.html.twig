@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="container">
     <h1>Courses list</h1>
 
     <table>
@@ -9,6 +8,7 @@
             <tr>
                 <th>Id</th>
                 <th>Departuredate</th>
+                <th>Departuretime</th>
                 <th>Seatsavailable</th>
                 <th>Actions</th>
             </tr>
@@ -17,7 +17,8 @@
         {% for course in courses %}
             <tr>
                 <td><a href="{{ path('course_show', { 'id': course.id }) }}">{{ course.id }}</a></td>
-                <td>{% if course.departureDate %}{{ course.departureDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if course.departureDate %}{{ course.departureDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if course.departureTime %}{{ course.departureTime|date('H:i:s') }}{% endif %}</td>
                 <td>{{ course.seatsAvailable }}</td>
                 <td>
                     <ul>
@@ -39,5 +40,4 @@
             <a href="{{ path('course_new') }}">Create a new course</a>
         </li>
     </ul>
-    </div>
 {% endblock %}

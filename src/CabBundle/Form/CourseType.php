@@ -10,6 +10,7 @@ const DATE = 'Symfony\Component\Form\Extension\Core\Type\DateType';
 const TIME = 'Symfony\Component\Form\Extension\Core\Type\TimeType';
 const SELECT = 'Symfony\Component\Form\Extension\Core\Type\ChoiceType';
 
+
 class CourseType extends AbstractType
 {
     /**
@@ -17,15 +18,14 @@ class CourseType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('departureDate', TEXT, array(
+        $builder->add('departureDate',TEXT, array(
             "attr" => array('class' => 'datepicker')))
-            ->add('departureTime', TIME, array(
-            "attr" => array('class' => 'timepicker')
-        ))->add('seatsAvailable')
+            ->add('departureTime')
+            ->add('seatsAvailable')
             ->add('departure')
-        ->add('arrival')        ;
+            ->add('arrival');
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -44,5 +44,18 @@ class CourseType extends AbstractType
         return 'cabbundle_course';
     }
 
+
+}
+
+/*
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add('departureDate', TEXT, array(
+            "attr" => array('class' => 'datepicker')))
+            ->add('departureTime', TIME, array(
+                "attr" => array('class' => 'timepicker')
+            ))->add('seatsAvailable')
+            ->add('departure')
+            ->add('arrival')
 
 }

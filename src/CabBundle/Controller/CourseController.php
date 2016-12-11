@@ -5,6 +5,8 @@ namespace CabBundle\Controller;
 use CabBundle\Entity\Course;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Course controller.
@@ -21,7 +23,7 @@ class CourseController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $courses = $em->getRepository('CabBundle:Course')->findAll();
-
+var_dump($courses);
         return $this->render('course/index.html.twig', array(
             'courses' => $courses,
         ));
@@ -38,9 +40,10 @@ class CourseController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $date = date("d/m/Y",strtotime($course->getDepartureDate()));
+            $date = new \DateTime();
+            $timestamp = strtotime($course->getDepartureDate());
+            $date->setTimestamp($timestamp);
             $course->setDepartureDate($date);
-            print_r($date);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($course);
@@ -92,6 +95,29 @@ class CourseController extends Controller
         ));
     }
 
+    public function homeAction(Request  $request)
+    {
+        $course = new Course();
+        $form = $this->createForm('CabBundle\Form\CourseType', $course);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+
+            $courses = $em->getRepository('CabBundle:Course')->findByDestinationDate($course);
+
+            return $this->render('course/index.html.twig', array(
+                'courses' => $courses,
+            ));
+        }
+
+        return $this->render('course/new.html.twig', array(
+            'course' => $course,
+            'form' => $form->createView(),
+        ));
+    }
+
     /**
      * Deletes a course entity.
      *
@@ -125,4 +151,5 @@ class CourseController extends Controller
             ->getForm()
         ;
     }
+
 }

@@ -1,3 +1,7 @@
 cab_course:
     resource: "@CabBundle/Resources/config/routing/course.yml"
     prefix:   /course
+cabsead:
+    path:     /cabsead
+    defaults: { _controller: "CabBundle:Course:home" }
+    methods:  [GET, POST]

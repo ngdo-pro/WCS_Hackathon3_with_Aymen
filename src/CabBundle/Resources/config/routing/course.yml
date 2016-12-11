@@ -22,3 +22,4 @@ course_delete:
     path:     /{id}/delete
     defaults: { _controller: "CabBundle:Course:delete" }
     methods:  DELETE
+

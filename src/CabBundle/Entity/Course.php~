@@ -143,4 +143,33 @@ class Course
     {
         return $this->arrival;
     }
+    /**
+     * @var \DateTime
+     */
+    private $departureTime;
+
+
+    /**
+     * Set departureTime
+     *
+     * @param \DateTime $departureTime
+     *
+     * @return Course
+     */
+    public function setDepartureTime($departureTime)
+    {
+        $this->departureTime = $departureTime;
+
+        return $this;
+    }
+
+    /**
+     * Get departureTime
+     *
+     * @return \DateTime
+     */
+    public function getDepartureTime()
+    {
+        return $this->departureTime;
+    }
 }

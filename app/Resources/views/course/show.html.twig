@@ -11,7 +11,11 @@
             </tr>
             <tr>
                 <th>Departuredate</th>
-                <td>{% if course.departureDate %}{{ course.departureDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if course.departureDate %}{{ course.departureDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Departuretime</th>
+                <td>{% if course.departureTime %}{{ course.departureTime|date('H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Seatsavailable</th>
