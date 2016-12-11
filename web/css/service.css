@@ -19,6 +19,7 @@ h3{
 main{
     background: url(../img/foods.jpg) fixed;
     background-size: cover;
+    padding-bottom: 50px;
     z-index: 1;
 }
 
@@ -86,4 +87,8 @@ main{
 .control-button-likes{
     color: white;
     padding: 5px 10px;
+}
+
+.row .col.control-panel{
+    padding: 0;
 }

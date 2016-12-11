@@ -43,4 +43,15 @@ class ServiceRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('service_provider_id', $serviceProvider->getId());
         return $qb->getQuery()->getResult();
     }
+
+    public function findBySpecialOffer(ServiceProvider $serviceProvider)
+    {
+        $qb = $this
+            ->createQueryBuilder('s')
+            ->select('s')
+            ->where('s.service_provider = :service_provider_id')
+            ->orderBy('s.specialOffer', 'DESC')
+            ->setParameter('service_provider_id', $serviceProvider->getId());
+        return $qb->getQuery()->getResult();
+    }
 }

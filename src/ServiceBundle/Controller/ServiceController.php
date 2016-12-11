@@ -32,7 +32,7 @@ class ServiceController extends Controller
                 $services = $em->getRepository('ServiceBundle:Service')->findByCategory($serviceProvider);
                 break;
             default:
-                $services = $em->getRepository('ServiceBundle:Service')->findBy(array('service_provider' => $serviceProvider->getId()));
+                $services = $em->getRepository('ServiceBundle:Service')->findBySpecialOffer($serviceProvider);
         }
         foreach ($services as $service){
             $phone = "";

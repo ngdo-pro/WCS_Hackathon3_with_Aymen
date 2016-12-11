@@ -11,10 +11,11 @@
     </section>
     <section id="controls">
         <div class="row">
-            <div class="col s10 offset-s1 right-align">
-                <a class="control-button-discount red darken-1" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-discount'}) }}">{{ 'discount' |trans }}</a>
+            <div class="col s10 offset-s1 center-align control-panel">
+                <a class="control-button-discount red darken-1 small" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-discount'}) }}">{{ 'discount' |trans }}</a>
                 <a class="control-button-likes light-blue darken-2" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-likes'}) }}">{{ 'likes' |trans }}</a>
                 <a class="control-button-category amber darken-1" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-category'}) }}">{{ 'category' |trans }}</a>
+                <a class="control-button-category purple" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-special-offer'}) }}">{{ 'special' |trans }}</a>
             </div>
         </div>
     </section>
@@ -23,7 +24,12 @@
             {% for service in services %}
                 <a href="#modal-{{ service.id }}" class="open-modal">
                     <div class="col s10 offset-s1 z-depth-3 rowList ">
-                        <div class="row service-name">{{ service.name }}</div>
+                        <div class="row service-name">
+                            <span class="left">{{ service.name }}</span>
+                            {% if service.specialOffer %}
+                                <span class="right purple-text"><i class="material-icons">stars</i></span>
+                            {% endif %}
+                        </div>
                         <div class="row service-infos valign-wrapper">
                             <div class="category-list amber darken-1 valign">{{ service.category |capitalize }}</div>
                             <i class="material-icons valign light-blue darken-2 white-text">favorite_border</i>
