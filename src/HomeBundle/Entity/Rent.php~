@@ -255,4 +255,3 @@ class Rent
         return $this->english;
     }
 }
-

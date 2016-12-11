@@ -24,6 +24,8 @@ HomeBundle\Entity\Rent:
             type: text
         size:
             type: integer
+        monthlyRentPrice:
+            type: integer
         extra:
             type: string
             length: 255
