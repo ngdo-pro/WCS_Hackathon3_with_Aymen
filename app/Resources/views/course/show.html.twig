@@ -48,6 +48,20 @@
     </div>
 
         {% if course.users %}
+            <div class="" style="border-bottom: 2px solid #2bbbad;border-top: 2px solid #2bbbad;">
+            <div class="row riders" style="margin-bottom:0;" >
+                <h5 class="col s1 offset-s1">Riders</h5>
+            </div>
+            {% for user in course.users.values %}
+                <div class="row">
+                    <ul class="col s6 offset-s2">
+                        <li>{{ user.firstname }}</li>
+                        <li>{{ user.username }}</li>
+                        <li>{{ user.whatsapp }}</li>
+                    </ul>
+                </div>
+            {% endfor %}
+            </div>
 
         {% endif %}
 

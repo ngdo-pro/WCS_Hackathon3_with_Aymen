@@ -35,9 +35,3 @@ CabBundle\Entity\Course:
             inversedBy: trips
             joinTable:
                 name: users_trip
-                joinColumns:
-                    user_id:
-                        referencedColumnName: id
-                inverseJoinColumns:
-                    group_id:
-                        referencedColumnName: id

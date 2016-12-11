@@ -154,9 +154,12 @@ class CourseController extends Controller
 
     public function joinAction(Request $request, Course $course)
     {
-        var_dump($this->getUser()->getId());
-        $desk = $this->getDoctrine()->getRepository('CabBundle:Course')->find(5);
-        var_dump($desk);
+        $em =$this->getDoctrine()->getManager();
+        $course->addUser($this->getUser());
+        $course->setSeatsAvailable($course->getSeatsAvailable() -1 );
+        $em->persist($course);
+        $em->flush();
+
 
       //  var_dump($_SESSION);
         return $this->render('course/show.html.twig', array(
