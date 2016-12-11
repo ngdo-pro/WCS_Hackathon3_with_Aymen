@@ -20,4 +20,5 @@ UserBundle\Entity\User:
     manyToMany:
         trips:
             targetEntity: CabBundle\Entity\Course
-            inversedBy: passengers
+            mappedBy: users
+

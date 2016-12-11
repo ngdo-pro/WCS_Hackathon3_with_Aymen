@@ -9,7 +9,7 @@ class Course
 {
     public function __toString()
     {
-     return $this->name;   // TODO: Implement __toString() method.
+     return $this->getDepartureDate();   // TODO: Implement __toString() method.
     }
 
     /**
@@ -171,5 +171,52 @@ class Course
     public function getDepartureTime()
     {
         return $this->departureTime;
+    }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $users;
+
+
+    /**
+     * Add user
+     *
+     * @param \UserBundle\Entity\User $user
+     *
+     * @return Course
+     */
+    public function addUser(\UserBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \UserBundle\Entity\User $user
+     */
+    public function removeUser(\UserBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }

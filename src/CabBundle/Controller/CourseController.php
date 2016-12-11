@@ -69,7 +69,6 @@ class CourseController extends Controller
             'course' => $course,
             'delete_form' => $deleteForm->createView(),
         ));
-
     }
 
     /**
@@ -97,10 +96,10 @@ class CourseController extends Controller
 
     public function homeAction(Request  $request)
     {
+
         $course = new Course();
         $form = $this->createForm('CabBundle\Form\CourseType', $course)->remove('seatsAvailable')->remove('departureTime');
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
 
             $em = $this->getDoctrine()->getManager();
@@ -151,6 +150,19 @@ class CourseController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function joinAction(Request $request, Course $course)
+    {
+        var_dump($this->getUser()->getId());
+        $desk = $this->getDoctrine()->getRepository('CabBundle:Course')->find(5);
+        var_dump($desk);
+
+      //  var_dump($_SESSION);
+        return $this->render('course/show.html.twig', array(
+            'course' => $course,
+        ));
+
     }
 
 }

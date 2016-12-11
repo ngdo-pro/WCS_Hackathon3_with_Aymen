@@ -23,3 +23,7 @@ course_delete:
     defaults: { _controller: "CabBundle:Course:delete" }
     methods:  DELETE
 
+course_join:
+    path:   /{id}/join
+    defaults: { _controller: "CabBundle:Course:join" }
+    methods:  [GET, POST]

@@ -122,4 +122,43 @@ class User extends BaseUser
     {
         return $this->whatsapp;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $trips;
+
+
+    /**
+     * Add trip
+     *
+     * @param \CabBundle\Entity\Course $trip
+     *
+     * @return User
+     */
+    public function addTrip(\CabBundle\Entity\Course $trip)
+    {
+        $this->trips[] = $trip;
+
+        return $this;
+    }
+
+    /**
+     * Remove trip
+     *
+     * @param \CabBundle\Entity\Course $trip
+     */
+    public function removeTrip(\CabBundle\Entity\Course $trip)
+    {
+        $this->trips->removeElement($trip);
+    }
+
+    /**
+     * Get trips
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTrips()
+    {
+        return $this->trips;
+    }
 }

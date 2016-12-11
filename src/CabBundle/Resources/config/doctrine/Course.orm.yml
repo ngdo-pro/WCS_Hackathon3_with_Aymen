@@ -30,6 +30,14 @@ CabBundle\Entity\Course:
                 name: arrival
                 referenceColumnName: name
     manyToMany:
-        passengers:
-            targetEntity: CabBundle\Entity\User
-            mappedBy: trip
+        users:
+            targetEntity: UserBundle\Entity\User
+            inversedBy: trips
+            joinTable:
+                name: users_trip
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    group_id:
+                        referencedColumnName: id

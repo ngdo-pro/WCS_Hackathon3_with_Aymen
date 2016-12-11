@@ -18,7 +18,7 @@
             <p class="right">At :</p>
         </div>
         <div class="col s6">
-            <p>    {% if course.departureTime %}{{ course.departureTime|date('H:i:s')}}{% endif %}
+            <p>    {% if course.departureTime %}{{ course.departureTime|date('H : i')}}{% endif %}
             </p>
         </div>
     </div>
@@ -47,10 +47,13 @@
         </div>
     </div>
 
+        {% if course.users %}
+
+        {% endif %}
 
     <ul>{% if course.seatsAvailable > 0 %}
         <li>
-            <a href="{{ asset('') }}">
+            <a href="{{ path('course_join', {'id': course.id }) }}">
                 <button type="submit" class="btn waves-effect waves-light btn_cab_check" value="Check" >Join
                     <i class="material-icons right">supervisor_account</i>
                 </button>
