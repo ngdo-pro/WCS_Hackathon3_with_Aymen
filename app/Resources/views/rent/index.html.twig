@@ -20,12 +20,7 @@
                         <div class="row rent-infos valign-wrapper">
                             <div class="category-list amber darken-1 valign">{{ rent.size }}</div>
                             <i class="material-icons valign light-blue darken-2 white-text">favorite_border</i>
-                            <div class="likes-list light-blue darken-2 white-text valign">{{ rent.english }}</div>
-                            {% if rent.discount %}
-                                <div class="dicount-list valign red darken-1 white-text">
-                                    - {{ rent.discount }} %
-                                </div>
-                            {% endif %}
+                            <div class="likes-list light-blue darken-2 white-text valign">{{ rent.monthlyRentPrice }}</div>
                         </div>
                     </div>
                 </a>
@@ -35,30 +30,29 @@
                             <h4 class="center-align col s12">{{ rent.name }}</h4>
                         </div>
                         <div class="row rent-infos-modal valign-wrapper">
-                            <div class="category-list amber darken-1 valign">{{ rent.category |capitalize }}</div>
+                            <div class="category-list amber darken-1 valign">{{ rent.size |capitalize }}</div>
                             <i class="material-icons valign light-blue darken-2 white-text">favorite_border</i>
-                            <div class="likes-list light-blue darken-2 white-text valign">{{ rent.likes }}</div>
-                            {% if rent.discount %}
-                                <div class="dicount-list valign red darken-1 white-text">
-                                    - {{ rent.discount }} %
-                                </div>
-                            {% endif %}
-                        </div>
-                        <div class="row">
-                            <p class="col s12">{{ rent.description }}</p>
+                            <div class="likes-list light-blue darken-2 white-text valign">{{ rent.monthlyRentPrice }}</div>
+
                         </div>
                         <div class="row">
                             <p class="col s12">{{ rent.address }}</p>
                         </div>
                         <div class="row">
-                            <p class="col s12"><i class="material-icons">phone</i>{{ rent.phoneNumber }}</p>
-                            {% if rent.email != null %}<p class="col s12">{{ rent.email }}</p>{% endif %}
+                            <p class="col s12">{{ rent.email }}</p>
                         </div>
-                        {% if rent.menuImg != null %}
-                            <div class="row">
-                                <img src="{{ asset('img/' ~ rent.menuImg ) }}" class="materialboxed"/>
-                            </div>
-                        {% endif %}
+                        <div class="row">
+                            <p class="col s12">{{ rent.houseFeedback }}</p>
+                        </div>
+                        <div class="row">
+                            <p class="col s12">{{ rent.ownerFeedback }}</p>
+                        </div>
+                        <div class="row">
+                            <p class="col s12">{{ rent.extra }}</p>
+                        </div>
+                        <div class="row">
+                            <p class="col s12">{{ rent.english }}</p>
+                        </div>
                         <div class="row">
                             <iframe
                                     width="100%"
