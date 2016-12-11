@@ -29,3 +29,7 @@ CabBundle\Entity\Course:
             joinColumn:
                 name: arrival
                 referenceColumnName: name
+    manyToMany:
+        passengers:
+            targetEntity: CabBundle\Entity\User
+            mappedBy: trip

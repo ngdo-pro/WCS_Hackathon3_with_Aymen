@@ -61,14 +61,15 @@ class CourseController extends Controller
      * Finds and displays a course entity.
      *
      */
-    public function showAction(Request $request,Course $course)
+    public function showAction(Course $course)
     {
+
         $deleteForm = $this->createDeleteForm($course);
-        var_dump($request->headers->get('referer'));
         return $this->render('course/show.html.twig', array(
             'course' => $course,
             'delete_form' => $deleteForm->createView(),
         ));
+
     }
 
     /**

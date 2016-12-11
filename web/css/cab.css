@@ -1,5 +1,18 @@
 main {
-
+    padding: 60px 0 ;
+    background: url(../img/taxi.jpg) fixed;
+    background-size: cover;
+    z-index: 1;
 }
 
-.container {}
+.container {
+    opacity: 0.9;
+    border-radius:  5px;
+}
+label {
+    font-size: 22px;
+}
+
+.btn_cab_check{
+    width: 100%;
+}

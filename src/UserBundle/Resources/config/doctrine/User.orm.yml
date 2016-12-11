@@ -17,3 +17,7 @@ UserBundle\Entity\User:
         whatsapp:
             type: string
             length: 14
+    manyToMany:
+        trips:
+            targetEntity: CabBundle\Entity\Course
+            inversedBy: passengers

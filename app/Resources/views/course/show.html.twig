@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/cab.css') }}">
+{% endblock %}
 {% block body %}
 <div class="container white">
     <div class="row">
@@ -46,14 +48,22 @@
     </div>
 
 
-    <ul>
+    <ul>{% if course.seatsAvailable > 0 %}
         <li>
-            <a href="{{ path('cabsead',{ course: course.departure } ) }}">Back to the list</a>
+            <a href="{{ asset('') }}">
+                <button type="submit" class="btn waves-effect waves-light btn_cab_check" value="Check" >Join
+                    <i class="material-icons right">supervisor_account</i>
+                </button>
+            </a>
         </li>
+        {% endif %}
+        <p></p>
         <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+            <a href="javascript:history.go(-1)">
+                <button type="submit" class="btn waves-effect waves-light btn_cab_check" value="Check" >Go back
+                    <i class="material-icons right">replay</i>
+                </button>
+            </a>
         </li>
     </ul>
 </div>
