@@ -9,3 +9,7 @@ $('.datepicker').pickadate({
 $(document).ready(function() {
     $('select').material_select();
 });
+$(document).ready(function() {
+    $('.modal').modal();
+    $('.materialboxed').materialbox();
+});

@@ -9,19 +9,19 @@
 
     <a href="#">
         <section id="castle" class="valign-wrapper">
-            <h3 class="valign">#Homeseadd</h3>
+            <h3 class="valign">{{ 'homepage.home-hashtag' |trans }}</h3>
         </section>
     </a>
 
     <a href="{{ path('cabsead') }}">
         <section id="cab" class="valign-wrapper">
-            <h3 class="valign">#Cabseadd</h3>
+            <h3 class="valign">{{ 'homepage.cab-hashtag' |trans }}</h3>
         </section>
     </a>
 
-    <a href="#">
+    <a href="{{ path('service_index', {'name': 'Restaurant', 'sort': 'list'}) }}">
         <section id="food" class="valign-wrapper last">
-            <h3 class="valign">#Foodseadd</h3>
+            <h3 class="valign">{{ 'homepage.food-hashtag' |trans }}</h3>
         </section>
     </a>
 

@@ -6,13 +6,13 @@ cab:
 
 service:
     resource: "@ServiceBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}
+    prefix:   /{_locale}/service/
     requirements:
         _locale: "%app.locales%"
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-    prefix:   /{_locale}
+    prefix:   /{_locale}/user/
     requirements:
         _locale: "%app.locales%"
 
