@@ -22,7 +22,17 @@ class ServiceController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $services = $em->getRepository('ServiceBundle:Service')->findBy(array('service_provider' => $serviceProvider->getId()));
-
+        foreach ($services as $service){
+            $phone = "";
+            for($i = 0; $i < 10; $i++){
+                $phone .= substr($service->getPhoneNumber(), $i, 2);
+                if($i != 8){
+                    $phone .= "-";
+                }
+                $i++;
+            }
+            $service->setPhoneNumber($phone);
+        }
         return $this->render('service/index.html.twig', array(
             'services' => $services,
         ));

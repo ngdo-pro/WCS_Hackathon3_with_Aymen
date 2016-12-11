@@ -3,12 +3,9 @@ section:first-child{
     position: relative;
 }
 
-a{
+h3{
     color: #ffdd00;
     text-transform: uppercase;
-}
-
-h3{
     font-weight: bold;
     margin: auto;
     text-shadow: 2px 2px 2px black;
@@ -26,15 +23,60 @@ main{
 }
 
 .rowList{
-    background: #dddddd;
+    background: #EEEEEE;
     cursor: pointer;
-    -webkit-transition: background 0.2s;
-    -moz-transition: background 0.2s;
-    -ms-transition: background 0.2s;
-    -o-transition: background 0.2s;
-    transition: background 0.2s;
 }
 
-.rowList:hover{
+.rowList:hover,
+.rowList:focus,
+.rowList:active{
     background: #ffffff;
+}
+
+.service-name{
+
+}
+
+.service-infos{
+    margin: 0;
+    position: relative;
+}
+
+.category-list,
+.dicount-list,
+.likes-list,
+.material-icons{
+    display: inline-block;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.material-icons{
+    margin-right: 0;
+}
+
+.likes-list{
+    margin-left: 0;
+}
+
+.category-list{
+    width: 30%;
+}
+
+.open-modal{
+    color: black;
+}
+
+.modal-content .row{
+    border-bottom: 1px solid grey;
+    margin-bottom: 0;
+}
+
+.service-infos-modal{
+    padding: 5px 0;
+    align-items: center;
+    justify-content: center;
 }
