@@ -22,6 +22,9 @@ ServiceBundle\Entity\Service:
             type: string
             length: 255
             nullable: true
+        category:
+            type: string
+            length: 255
         description:
             type: text
         likes:

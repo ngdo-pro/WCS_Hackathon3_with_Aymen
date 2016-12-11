@@ -1,0 +1,94 @@
+section:first-child{
+    height: 15vh;
+    position: relative;
+}
+
+h3{
+    color: #ffdd00;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: auto;
+    text-shadow: 2px 2px 2px black;
+    z-index: 2;
+}
+
+.row .col{
+    padding: 20px;
+}
+
+main{
+    background: url(../img/foods.jpg) fixed;
+    background-size: cover;
+    padding-bottom: 50px;
+    z-index: 1;
+}
+
+.rowList{
+    background: #EEEEEE;
+    cursor: pointer;
+}
+
+.rowList:hover,
+.rowList:focus,
+.rowList:active{
+    background: #ffffff;
+}
+
+.service-name{
+
+}
+
+.service-infos{
+    margin: 0;
+    position: relative;
+}
+
+.category-list,
+.dicount-list,
+.likes-list,
+.material-icons{
+    display: inline-block;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.material-icons{
+    margin-right: 0;
+}
+
+.likes-list{
+    margin-left: 0;
+}
+
+.category-list{
+    width: 30%;
+}
+
+.open-modal{
+    color: black;
+}
+
+.modal-content .row{
+    border-bottom: 1px solid grey;
+    margin-bottom: 0;
+}
+
+.service-infos-modal{
+    padding: 10px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-button-discount,
+.control-button-category,
+.control-button-likes{
+    color: white;
+    padding: 5px 10px;
+}
+
+.row .col.control-panel{
+    padding: 0;
+}

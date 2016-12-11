@@ -3,6 +3,7 @@
 namespace ServiceBundle\Controller;
 
 use ServiceBundle\Entity\Service;
+use ServiceBundle\Entity\ServiceProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -16,16 +17,41 @@ class ServiceController extends Controller
      * Lists all service entities.
      *
      */
-    public function indexAction()
+    public function indexAction(ServiceProvider $serviceProvider, $sort = 'default')
     {
         $em = $this->getDoctrine()->getManager();
 
-        $services = $em->getRepository('ServiceBundle:Service')->findAll();
-
+        switch($sort){
+            case 'sort-by-discount':
+                $services = $em->getRepository('ServiceBundle:Service')->findByDiscount($serviceProvider);
+                break;
+            case 'sort-by-likes':
+                $services = $em->getRepository('ServiceBundle:Service')->findByLikes($serviceProvider);
+                break;
+            case 'sort-by-category':
+                $services = $em->getRepository('ServiceBundle:Service')->findByCategory($serviceProvider);
+                break;
+            default:
+                $services = $em->getRepository('ServiceBundle:Service')->findBySpecialOffer($serviceProvider);
+        }
+        foreach ($services as $service){
+            $phone = "";
+            for($i = 0; $i < 10; $i++){
+                $phone .= substr($service->getPhoneNumber(), $i, 2);
+                if($i != 8){
+                    $phone .= "-";
+                }
+                $i++;
+            }
+            $service->setPhoneNumber($phone);
+        }
+        $service_provider = 'Restaurant';
         return $this->render('service/index.html.twig', array(
             'services' => $services,
+            'service_provider' => $service_provider
         ));
     }
+
 
     /**
      * Creates a new service entity.

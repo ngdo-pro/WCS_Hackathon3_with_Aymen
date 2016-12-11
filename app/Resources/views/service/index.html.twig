@@ -1,57 +1,90 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/service.css') }}">
+{% endblock %}
+
+{% trans_default_domain 'service' %}
 {% block body %}
-    <h1>Services list</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phonenumber</th>
-                <th>Email</th>
-                <th>Description</th>
-                <th>Likes</th>
-                <th>Menuimg</th>
-                <th>Discount</th>
-                <th>Specialoffer</th>
-                <th>Createdat</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for service in services %}
-            <tr>
-                <td><a href="{{ path('service_show', { 'id': service.id }) }}">{{ service.id }}</a></td>
-                <td>{{ service.name }}</td>
-                <td>{{ service.address }}</td>
-                <td>{{ service.phoneNumber }}</td>
-                <td>{{ service.email }}</td>
-                <td>{{ service.description }}</td>
-                <td>{{ service.likes }}</td>
-                <td>{{ service.menuImg }}</td>
-                <td>{{ service.discount }}</td>
-                <td>{% if service.specialOffer %}Yes{% else %}No{% endif %}</td>
-                <td>{% if service.createdAt %}{{ service.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('service_show', { 'id': service.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('service_edit', { 'id': service.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('service_new') }}">Create a new service</a>
-        </li>
-    </ul>
+    <section id="food" class="valign-wrapper last">
+        <h3 class="valign">{{ 'homepage.food-hashtag' |trans({}, 'homepage') }}</h3>
+    </section>
+    <section id="controls">
+        <div class="row">
+            <div class="col s10 offset-s1 center-align control-panel">
+                <a class="control-button-discount red darken-1 small" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-discount'}) }}">{{ 'discount' |trans }}</a>
+                <a class="control-button-likes light-blue darken-2" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-likes'}) }}">{{ 'likes' |trans }}</a>
+                <a class="control-button-category amber darken-1" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-category'}) }}">{{ 'category' |trans }}</a>
+                <a class="control-button-category purple" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-special-offer'}) }}">{{ 'special' |trans }}</a>
+            </div>
+        </div>
+    </section>
+    <section id="serviceList">
+        <div class="row">
+            {% for service in services %}
+                <a href="#modal-{{ service.id }}" class="open-modal">
+                    <div class="col s10 offset-s1 z-depth-3 rowList ">
+                        <div class="row service-name">
+                            <span class="left">{{ service.name }}</span>
+                            {% if service.specialOffer %}
+                                <span class="right purple-text"><i class="material-icons">stars</i></span>
+                            {% endif %}
+                        </div>
+                        <div class="row service-infos valign-wrapper">
+                            <div class="category-list amber darken-1 valign">{{ service.category |capitalize }}</div>
+                            <i class="material-icons valign light-blue darken-2 white-text">favorite_border</i>
+                            <div class="likes-list light-blue darken-2 white-text valign">{{ service.likes }}</div>
+                            {% if service.discount %}
+                                <div class="dicount-list valign red darken-1 white-text">
+                                    - {{ service.discount }} %
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+                <div id="modal-{{ service.id }}" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <div class="row">
+                            <h4 class="center-align col s12">{{ service.name }}</h4>
+                        </div>
+                        <div class="row service-infos-modal valign-wrapper">
+                            <div class="category-list amber darken-1 valign">{{ service.category |capitalize }}</div>
+                            <i class="material-icons valign light-blue darken-2 white-text">favorite_border</i>
+                            <div class="likes-list light-blue darken-2 white-text valign">{{ service.likes }}</div>
+                            {% if service.discount %}
+                                <div class="dicount-list valign red darken-1 white-text">
+                                    - {{ service.discount }} %
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="row">
+                            <p class="col s12">{{ service.description }}</p>
+                        </div>
+                        <div class="row">
+                            <p class="col s12">{{ service.address }}</p>
+                        </div>
+                        <div class="row">
+                            <p class="col s12"><i class="material-icons">phone</i>{{ service.phoneNumber }}</p>
+                            {% if service.email != null %}<p class="col s12">{{ service.email }}</p>{% endif %}
+                        </div>
+                        {% if service.menuImg != null %}
+                        <div class="row">
+                            <img src="{{ asset('img/' ~ service.menuImg ) }}" class="materialboxed"/>
+                        </div>
+                        {% endif %}
+                        <div class="row">
+                            <iframe
+                                    width="100%"
+                                    height="350"
+                                    frameborder="0"
+                                    style="border:0;"
+                                    class="grayscale"
+                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-rF-Vq2l82L91CVwjkQXVJSRGYeBczFo&q={{ service.address }}%20France" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}

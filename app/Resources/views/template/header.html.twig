@@ -3,7 +3,7 @@
     <nav class="light-blue darken-2">
         <div class="nav-wrapper container">
             <a href="{{ path('app_redirect') }}" class="brand-logo right"><img src="{{ asset('img/faviconInseap.png') }}" class="img-responsive logo" /></a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="large material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li><a href="{{ path('fos_user_security_logout') }}">{{ 'menu.logout' |trans }}</a></li>
