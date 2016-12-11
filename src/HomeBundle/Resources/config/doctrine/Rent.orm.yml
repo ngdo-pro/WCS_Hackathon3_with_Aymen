@@ -31,6 +31,9 @@ HomeBundle\Entity\Rent:
             length: 255
         english:
             type: boolean
+        Img:
+            type: string
+            length: 255
     manyToOne:
         owner_type:
             targetEntity: HomeBundle\Entity\OwnerType

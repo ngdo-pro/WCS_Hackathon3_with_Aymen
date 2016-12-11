@@ -283,4 +283,33 @@ class Rent
     {
         return $this->monthlyRentPrice;
     }
+    /**
+     * @var \HomeBundle\Entity\OwnerType
+     */
+    private $owner_type;
+
+
+    /**
+     * Set ownerType
+     *
+     * @param \HomeBundle\Entity\OwnerType $ownerType
+     *
+     * @return Rent
+     */
+    public function setOwnerType(\HomeBundle\Entity\OwnerType $ownerType = null)
+    {
+        $this->owner_type = $ownerType;
+
+        return $this;
+    }
+
+    /**
+     * Get ownerType
+     *
+     * @return \HomeBundle\Entity\OwnerType
+     */
+    public function getOwnerType()
+    {
+        return $this->owner_type;
+    }
 }
