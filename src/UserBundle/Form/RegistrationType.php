@@ -9,7 +9,10 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-          ->remove('username');
+            ->remove('username')
+            ->add('whatsapp', null, array(
+            'label' => 'WhatsApp'
+            ));
         ;
     }
 

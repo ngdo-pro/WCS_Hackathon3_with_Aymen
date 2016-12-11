@@ -14,3 +14,6 @@ UserBundle\Entity\User:
         firstname:
             type: string
             length: 255
+        whatsapp:
+            type: string
+            length: 14

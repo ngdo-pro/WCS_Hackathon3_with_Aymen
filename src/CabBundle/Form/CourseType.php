@@ -19,13 +19,14 @@ class CourseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('departureDate',TEXT, array(
-            "attr" => array('class' => 'datepicker')))
-            ->add('departureTime')
+            "attr" => array('class' => 'datepicker'),
+            "label" => "Date"))
+            ->add('departureTime',null , array('label' => 'Departure at'))
             ->add('seatsAvailable')
-            ->add('departure')
-            ->add('arrival');
+            ->add('departure',null , array('label' => 'From :'))
+            ->add('arrival', null,  array('label' => 'To :'));
     }
-    
+
     /**
      * {@inheritdoc}
      */

@@ -96,4 +96,30 @@ class User extends BaseUser
 
         }
     }
+
+    protected $whatsapp;
+
+    /**
+     * Set whatsapp
+     *
+     * @param string $whatsapp
+     *
+     * @return User
+     */
+    public function setWhatsapp($whatsapp)
+    {
+        $this->whatsapp = $whatsapp;
+
+        return $this;
+    }
+
+    /**
+     * Get whatsapp
+     *
+     * @return string
+     */
+    public function getWhatsapp()
+    {
+        return $this->whatsapp;
+    }
 }

@@ -1,35 +1,54 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Course</h1>
+<div class="container white">
+    <div class="row">
+        <div class="col s4">
+            <p class="right">On :</p>
+        </div>
+        <div class="col s6">
+            <p>{% if course.departureDate %}{{ course.departureDate|date('d F Y') }}{% endif %}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4">
+            <p class="right">At :</p>
+        </div>
+        <div class="col s6">
+            <p>    {% if course.departureTime %}{{ course.departureTime|date('H:i:s')}}{% endif %}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4">
+            <p class="right">From :</p>
+        </div>
+        <div class="col s6">
+            <p>{{ course.departure }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4">
+            <p class="right">To :</p>
+        </div>
+        <div class="col s6">
+            <p>{{ course.arrival }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4">
+            <p class="right">Seats left : </p>
+        </div>
+        <div class="col s6">
+            <p><strong>{{ course.seatsAvailable }}</strong></p>
+        </div>
+    </div>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ course.id }}</td>
-            </tr>
-            <tr>
-                <th>Departuredate</th>
-                <td>{% if course.departureDate %}{{ course.departureDate|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Departuretime</th>
-                <td>{% if course.departureTime %}{{ course.departureTime|date('H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Seatsavailable</th>
-                <td>{{ course.seatsAvailable }}</td>
-            </tr>
-        </tbody>
-    </table>
 
     <ul>
         <li>
-            <a href="{{ path('course_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('course_edit', { 'id': course.id }) }}">Edit</a>
+            <a href="{{ path('cabsead',{ course: course.departure } ) }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
@@ -37,4 +56,5 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+</div>
 {% endblock %}

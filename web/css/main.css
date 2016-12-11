@@ -48,3 +48,12 @@ main {
     background-image: url(../img/castle.jpg);
 
 }
+
+/* CAB Course Bundle */
+label {
+    font-size: 22px;
+}
+
+.btn_cab_check{
+    width: 100%;
+}

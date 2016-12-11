@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/cab.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="container white">
+        <div class="row">
+            <div class="col s4">
+                <p class="right">On :</p>
+            </div>
+            <div class="col s6">
+                <p>{{ rq.Departuredate|date("d F Y") }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s4">
+                <p class="right">From :</p>
+            </div>
+                <div class="col s6">
+                <p>{{ rq.departure }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s4">
+                <p class="right">To :</p>
+            </div>
+            <div class="col s6">
+                <p>{{ rq.arrival }}</p>
+            </div>
+        </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Departure at</th>
+            <th>Seats left</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for course in courses %}
+            <tr>
+                <td class="center">{% if course.departureTime %}{{ course.departureTime|date('H:i') }}{% endif %}</td>
+                <td class="center">{{ course.seatsAvailable }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('course_show', { 'id': course.id }) }}">
+                                <button type="submit" class="btn waves-effect waves-light right " value="Check" >Show</button>
+                            </a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('course_new') }}">
+                <button type="submit" class="btn waves-effect waves-light btn_cab_check" value="Check" > Create trip
+                <i class="material-icons right">send</i>
+                </button>
+            </a>
+        <p></p>
+            <a href="{{ path('cabsead') }}">
+                <button type="submit" class="btn waves-effect waves-light btn_cab_check" value="Check" > Go back
+                <i class="material-icons right">replay</i>
+                </button>
+            </a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

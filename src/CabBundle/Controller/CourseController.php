@@ -23,7 +23,6 @@ class CourseController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $courses = $em->getRepository('CabBundle:Course')->findAll();
-var_dump($courses);
         return $this->render('course/index.html.twig', array(
             'courses' => $courses,
         ));
@@ -62,10 +61,10 @@ var_dump($courses);
      * Finds and displays a course entity.
      *
      */
-    public function showAction(Course $course)
+    public function showAction(Request $request,Course $course)
     {
         $deleteForm = $this->createDeleteForm($course);
-
+        var_dump($request->headers->get('referer'));
         return $this->render('course/show.html.twig', array(
             'course' => $course,
             'delete_form' => $deleteForm->createView(),
@@ -98,7 +97,7 @@ var_dump($courses);
     public function homeAction(Request  $request)
     {
         $course = new Course();
-        $form = $this->createForm('CabBundle\Form\CourseType', $course);
+        $form = $this->createForm('CabBundle\Form\CourseType', $course)->remove('seatsAvailable')->remove('departureTime');
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -107,12 +106,13 @@ var_dump($courses);
 
             $courses = $em->getRepository('CabBundle:Course')->findByDestinationDate($course);
 
-            return $this->render('course/index.html.twig', array(
+            return $this->render('course/cabsead.html.twig', array(
+                "rq" => $course,
                 'courses' => $courses,
             ));
         }
 
-        return $this->render('course/new.html.twig', array(
+        return $this->render('course/cabseadCheck.html.twig', array(
             'course' => $course,
             'form' => $form->createView(),
         ));
