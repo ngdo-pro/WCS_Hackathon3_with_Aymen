@@ -76,7 +76,14 @@ main{
 }
 
 .service-infos-modal{
-    padding: 5px 0;
+    padding: 10px 0;
     align-items: center;
     justify-content: center;
+}
+
+.control-button-discount,
+.control-button-category,
+.control-button-likes{
+    color: white;
+    padding: 5px 10px;
 }

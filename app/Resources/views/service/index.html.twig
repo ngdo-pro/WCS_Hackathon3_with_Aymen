@@ -9,6 +9,15 @@
     <section id="food" class="valign-wrapper last">
         <h3 class="valign">{{ 'homepage.food-hashtag' |trans({}, 'homepage') }}</h3>
     </section>
+    <section id="controls">
+        <div class="row">
+            <div class="col s10 offset-s1 right-align">
+                <a class="control-button-discount red darken-1" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-discount'}) }}">{{ 'discount' |trans }}</a>
+                <a class="control-button-likes light-blue darken-2" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-likes'}) }}">{{ 'likes' |trans }}</a>
+                <a class="control-button-category amber darken-1" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-category'}) }}">{{ 'category' |trans }}</a>
+            </div>
+        </div>
+    </section>
     <section id="serviceList">
         <div class="row">
             {% for service in services %}
@@ -17,8 +26,8 @@
                         <div class="row service-name">{{ service.name }}</div>
                         <div class="row service-infos valign-wrapper">
                             <div class="category-list amber darken-1 valign">{{ service.category |capitalize }}</div>
-                            <i class="material-icons valign blue white-text">favorite_border</i>
-                            <div class="likes-list blue white-text valign">{{ service.likes }}</div>
+                            <i class="material-icons valign light-blue darken-2 white-text">favorite_border</i>
+                            <div class="likes-list light-blue darken-2 white-text valign">{{ service.likes }}</div>
                             {% if service.discount %}
                                 <div class="dicount-list valign red darken-1 white-text">
                                     - {{ service.discount }} %
@@ -34,8 +43,8 @@
                         </div>
                         <div class="row service-infos-modal valign-wrapper">
                             <div class="category-list amber darken-1 valign">{{ service.category |capitalize }}</div>
-                            <i class="material-icons valign blue white-text">favorite_border</i>
-                            <div class="likes-list blue white-text valign">{{ service.likes }}</div>
+                            <i class="material-icons valign light-blue darken-2 white-text">favorite_border</i>
+                            <div class="likes-list light-blue darken-2 white-text valign">{{ service.likes }}</div>
                             {% if service.discount %}
                                 <div class="dicount-list valign red darken-1 white-text">
                                     - {{ service.discount }} %

@@ -17,11 +17,23 @@ class ServiceController extends Controller
      * Lists all service entities.
      *
      */
-    public function indexAction(ServiceProvider $serviceProvider)
+    public function indexAction(ServiceProvider $serviceProvider, $sort = 'default')
     {
         $em = $this->getDoctrine()->getManager();
 
-        $services = $em->getRepository('ServiceBundle:Service')->findBy(array('service_provider' => $serviceProvider->getId()));
+        switch($sort){
+            case 'sort-by-discount':
+                $services = $em->getRepository('ServiceBundle:Service')->findByDiscount($serviceProvider);
+                break;
+            case 'sort-by-likes':
+                $services = $em->getRepository('ServiceBundle:Service')->findByLikes($serviceProvider);
+                break;
+            case 'sort-by-category':
+                $services = $em->getRepository('ServiceBundle:Service')->findByCategory($serviceProvider);
+                break;
+            default:
+                $services = $em->getRepository('ServiceBundle:Service')->findBy(array('service_provider' => $serviceProvider->getId()));
+        }
         foreach ($services as $service){
             $phone = "";
             for($i = 0; $i < 10; $i++){
@@ -33,10 +45,13 @@ class ServiceController extends Controller
             }
             $service->setPhoneNumber($phone);
         }
+        $service_provider = 'Restaurant';
         return $this->render('service/index.html.twig', array(
             'services' => $services,
+            'service_provider' => $service_provider
         ));
     }
+
 
     /**
      * Creates a new service entity.
