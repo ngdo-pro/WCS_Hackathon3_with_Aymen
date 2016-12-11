@@ -17,10 +17,15 @@
                         <div class="row rent-name">
                             <span class="left">{{ rent.name }}</span>
                         </div>
-                        <div class="row rent-infos valign-wrapper">
-                            <div class="category-list amber darken-1 valign">{{ rent.size }} m²</div>
-                            <div class="likes-list light-blue darken-2 white-text valign">{{ rent.monthlyRentPrice }}</div>
-                            <i class="material-icons valign light-blue darken-2 white-text">euro_symbol</i>
+                        <div class="row rent-infos">
+                            <div class="col s8 valign-wrapper">
+                                <div class="category-list amber darken-1 valign">{{ rent.size }} m²</div>
+                                <div class="likes-list light-blue darken-2 white-text valign">{{ rent.monthlyRentPrice }}</div>
+                                <i class="material-icons valign light-blue darken-2 white-text">euro_symbol</i>
+                            </div>
+                            <div class="col s4">
+                                <img src="{{ asset('img/' ~ rent.img) }}" class="img-responsive thumbnail" />
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -30,9 +35,12 @@
                             <h4 class="center-align col s12">{{ rent.name }}</h4>
                         </div>
                         <div class="row rent-infos-modal valign-wrapper">
-                            <div class="category-list amber darken-1 valign">{{ rent.size |capitalize }}</div>
+                            <div class="category-list amber darken-1 valign">{{ rent.size |capitalize }} m²</div>
                             <div class="likes-list light-blue darken-2 white-text valign">{{ rent.monthlyRentPrice }}</div>
                             <i class="material-icons valign light-blue darken-2 white-text">euro_symbol</i>
+                        </div>
+                        <div class="row">
+                            <img src="{{ asset('img/' ~ rent.img) }}" class="img-responsive thumbnail" />
                         </div>
                         <div class="row">
                             <h5 class="center-align">{{ 'address' |trans}}</h5>
@@ -56,7 +64,7 @@
                         </div>
                         <div class="row">
                             <h5>{{ 'english' |trans}} :</h5>
-                            <p class="col s12">{{ rent.english }}</p>
+                            <p class="col s12">{% if rent.english %}{{ 'yes' |trans }}{% else %}{{ 'no' |trans }}{% endif %}</p>
                         </div>
                         <div class="row">
                             <iframe

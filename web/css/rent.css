@@ -92,3 +92,15 @@ main{
 .row .col.control-panel{
     padding: 0;
 }
+
+.row .col{
+    padding: 10px;
+}
+
+.row .col.s4{
+    padding: 0;
+}
+
+img{
+    width: 100%;
+}
