@@ -16,3 +16,15 @@ label {
 .btn_cab_check{
     width: 100%;
 }
+
+.driver {
+   border-top: 2px solid #2bbbad;
+
+}
+.driver div {
+    text-align: center;
+    margin: 0;
+}
+.row_driver .col.s12{
+    padding: 0!important;
+}

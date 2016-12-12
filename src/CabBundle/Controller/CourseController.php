@@ -2,6 +2,7 @@
 
 namespace CabBundle\Controller;
 
+use CabBundle\Entity\CabDriver;
 use CabBundle\Entity\Course;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -160,12 +161,30 @@ class CourseController extends Controller
         $em->persist($course);
         $em->flush();
 
-
       //  var_dump($_SESSION);
         return $this->render('course/show.html.twig', array(
             'course' => $course,
         ));
 
+    }
+
+    public function tripAction(Request $request, Course $course)
+    {
+        $user = $this->getDoctrine()->getManager();
+
+        return $this->render('course/show.html.twig', array(
+            'course' => $course,
+        ));
+
+    }
+
+    public function driverAction()
+    {
+        $cabDriver = $this->getDoctrine()->getManager()->getRepository(CabDriver::class)->findAll();
+
+
+        return $this->render('course/showdriver.html.twig' ,
+            array('driver'=> $cabDriver));
     }
 
 }

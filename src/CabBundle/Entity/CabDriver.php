@@ -7,6 +7,7 @@ namespace CabBundle\Entity;
  */
 class CabDriver
 {
+    private $language;
     /**
      * @var int
      */
@@ -166,5 +167,29 @@ class CabDriver
     public function getCreditCardAccepted()
     {
         return $this->creditCardAccepted;
+    }
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     *
+     * @return CabDriver
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->language;
     }
 }

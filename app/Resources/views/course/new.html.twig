@@ -1,16 +1,23 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/cab.css') }}">
+{% endblock %}
 {% block body %}
-    <h3>Course creation</h3>
+    <div class="container white" style="padding:20px; ">
+    <h4>Create trip</h4>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Check" />
-    {{ form_end(form) }}
+        <button type="submit" class="btn waves-effect waves-light btn_cab_check" value="Check" >I have my own car
+            <i class="material-icons right">send</i>
+        </button>    {{ form_end(form) }}
 
     <ul>
-        <li>
-            <a href="{{ path('course_index') }}">Back to the list</a>
-        </li>
+        <a href="{{ path('cabdriver')}}">
+            <button type="submit" class="btn waves-effect waves-light btn_cab_check" value="Check" >Book a taxi
+            <i class="material-icons right">contact_phone</i>
+            </button>
+        </a>
     </ul>
+    </div>
 {% endblock %}

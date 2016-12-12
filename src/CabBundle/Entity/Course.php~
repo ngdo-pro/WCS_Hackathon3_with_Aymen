@@ -9,7 +9,7 @@ class Course
 {
     public function __toString()
     {
-     return $this->name;   // TODO: Implement __toString() method.
+     return $this->getDepartureDate();   // TODO: Implement __toString() method.
     }
 
     /**
@@ -174,15 +174,6 @@ class Course
     }
 
     /**
-     * Get passengers
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPassengers()
-    {
-        return $this->passengers;
-    }
-    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $users;
@@ -220,5 +211,12 @@ class Course
     public function getUsers()
     {
         return $this->users;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
     }
 }

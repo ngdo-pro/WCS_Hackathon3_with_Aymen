@@ -24,4 +24,8 @@ CabBundle\Entity\CabDriver:
             length: 255
         creditCardAccepted:
             type: boolean
+        language:
+            type: string
+            length: 255
+            nullable: true
     lifecycleCallbacks: {  }

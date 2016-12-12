@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/cab.css') }}">
+{% endblock %}
+{% block body %}
+    <div class="container white">
+        <div class="row row_driver">
+            <div class="col s12">
+                <h4 class="center-align">Driver Book</h4>
+            </div>
+            <div class="container">
+
+                {% for drivers in driver %}
+                 <div class="row driver">
+                     <div class="col s12">{{  drivers.name }}</div>
+                {% if drivers.language %}
+                    <div class="col s12">  {{ drivers.language }}</div>
+                    {% endif %}
+                {% if drivers.tel1 %}
+                     <div class="col s12"> {{ drivers.tel1 }}</div>
+                    {% endif %}
+                    {% if  drivers.tel2 %}
+                     <div class="col s12"> {{ drivers.tel2 }}</div>
+                    {% endif %}
+                    {% if  drivers.email %}
+                     <div class="col s12"> {{ drivers.email }}</div>
+                    {% endif %}
+                    {% if  drivers.creditCardAccepted %}
+                     <div class="col s12">Accept credit card</div>
+                {% endif %}
+                 </div>
+                {% endfor %}
+
+{% endblock %}

@@ -5,3 +5,7 @@ cabsead:
     path:     /cabsead
     defaults: { _controller: "CabBundle:Course:home" }
     methods:  [GET, POST]
+
+cabdriver:
+    path:     /cabdriver
+    defaults: { _controller: "CabBundle:Course:driver" }

@@ -1,3 +1,8 @@
+cab_trip:
+    path:     /mytrips
+    defaults: { _controller: "UserBundle:Default:trip"}
+    methods: [GET, POST]
+
 cab:
     resource: "@CabBundle/Resources/config/routing.yml"
     prefix:   /{_locale}
