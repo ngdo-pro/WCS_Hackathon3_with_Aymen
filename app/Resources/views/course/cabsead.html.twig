@@ -28,7 +28,7 @@
                 <p>{{ rq.arrival }}</p>
             </div>
         </div>
-
+{% if courses %}
     <table>
         <thead>
         <tr>
@@ -55,7 +55,9 @@
         {% endfor %}
         </tbody>
     </table>
-
+    {% else %}
+    <div class="center-align">No trip found this day, sorry...</div>
+{% endif %}
     <ul>
         <li>
             <a href="{{ path('course_new') }}">
