@@ -60,7 +60,7 @@
                     <ul class="col s6 offset-s2">
                         <li>{{ user.firstname }}</li>
                         <li>{{ user.username }}</li>
-                        <li>{{ user.whatsapp }}</li>
+                        <li><a href="{{ user.whatsapp }}">{{ user.whatsapp }}</a></li>
                     </ul>
                 </div>
             {% endfor %}

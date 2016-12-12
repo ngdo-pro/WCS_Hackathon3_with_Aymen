@@ -71,7 +71,7 @@
                             <p class="col s12">{{ service.address }}</p>
                         </div>
                         <div class="row">
-                            <p class="col s12"><i class="material-icons">phone</i>{{ service.phoneNumber }}</p>
+                            <p class="col s12"><i class="material-icons">phone</i><a href="tel:{{ service.phoneNumber }}">{{ service.phoneNumber }}</a></p>
                             {% if service.email != null %}<p class="col s12">{{ service.email }}</p>{% endif %}
                         </div>
                         {% if service.menuImg != null %}
