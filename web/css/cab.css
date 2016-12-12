@@ -1,5 +1,18 @@
+section:first-child{
+    height: 15vh;
+    position: relative;
+}
+
+#cab h3{
+    color: #ffdd00;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: auto;
+    text-shadow: 2px 2px 2px black;
+}
+
 main {
-    padding: 60px 0 ;
+    padding: 0 0 200px 0;
     background: url(../img/taxi.jpg) fixed;
     background-size: cover;
     z-index: 1;
