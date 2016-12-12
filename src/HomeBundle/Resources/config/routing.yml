@@ -1,0 +1,5 @@
+home_rent:
+    resource: "@HomeBundle/Resources/config/routing/rent.yml"
+    prefix:   /
+
+

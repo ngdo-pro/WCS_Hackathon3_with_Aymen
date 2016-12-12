@@ -17,7 +17,7 @@ h3{
 }
 
 main{
-    background: url(../img/foods.jpg) fixed;
+    background: url(../img/castle.jpg) fixed;
     background-size: cover;
     padding-bottom: 50px;
     z-index: 1;
@@ -34,11 +34,11 @@ main{
     background: #ffffff;
 }
 
-.service-name{
+.rent-name{
 
 }
 
-.service-infos{
+.rent-infos{
     margin: 0;
     position: relative;
 }
@@ -56,11 +56,11 @@ main{
 }
 
 .material-icons{
-    margin-right: 0;
+    margin-left: 0;
 }
 
 .likes-list{
-    margin-left: 0;
+    margin-right: 0;
 }
 
 .category-list{
@@ -76,7 +76,7 @@ main{
     margin-bottom: 0;
 }
 
-.service-infos-modal{
+.rent-infos-modal{
     padding: 10px 0;
     align-items: center;
     justify-content: center;
@@ -93,9 +93,14 @@ main{
     padding: 0;
 }
 
-#controls .row .col{
-    padding: 5px 10px;
+.row .col{
+    padding: 10px;
 }
-#controls .row:first-child{
-    margin: 0;
+
+.row .col.s4{
+    padding: 0;
+}
+
+img{
+    width: 100%;
 }

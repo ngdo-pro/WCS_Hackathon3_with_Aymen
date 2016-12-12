@@ -1,0 +1,8 @@
+address: "Adress"
+owner.email: "Email"
+feedback.house: "House Feedback"
+feedback.owner: "Owner Feedback"
+extra: "Extra"
+english: "English"
+'yes': "Yes"
+'no': "No"
