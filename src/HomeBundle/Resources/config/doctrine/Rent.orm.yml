@@ -34,6 +34,7 @@ HomeBundle\Entity\Rent:
         Img:
             type: string
             length: 255
+            nullable: true
     manyToOne:
         owner_type:
             targetEntity: HomeBundle\Entity\OwnerType
