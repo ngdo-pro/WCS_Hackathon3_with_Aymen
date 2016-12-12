@@ -21,11 +21,8 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new ServiceBundle\ServiceBundle(),
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
-<<<<<<< HEAD
             new CabBundle\CabBundle(),
-=======
             new HomeBundle\HomeBundle(),
->>>>>>> f935cce0b4aba022bbc8d4f8295661bc080a3a41
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

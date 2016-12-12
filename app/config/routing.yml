@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 cab_trip:
     path:     /mytrips
     defaults: { _controller: "UserBundle:Default:trip"}
@@ -7,11 +7,10 @@ cab_trip:
 cab:
     resource: "@CabBundle/Resources/config/routing.yml"
     prefix:   /{_locale}
-=======
+
 home:
     resource: "@HomeBundle/Resources/config/routing.yml"
     prefix:   /{_locale}/rent/
->>>>>>> f935cce0b4aba022bbc8d4f8295661bc080a3a41
     requirements:
         _locale: "%app.locales%"
 
