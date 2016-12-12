@@ -312,4 +312,33 @@ class Rent
     {
         return $this->owner_type;
     }
+    /**
+     * @var string
+     */
+    private $Img;
+
+
+    /**
+     * Set img
+     *
+     * @param string $img
+     *
+     * @return Rent
+     */
+    public function setImg($img)
+    {
+        $this->Img = $img;
+
+        return $this;
+    }
+
+    /**
+     * Get img
+     *
+     * @return string
+     */
+    public function getImg()
+    {
+        return $this->Img;
+    }
 }
