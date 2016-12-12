@@ -92,3 +92,10 @@ main{
 .row .col.control-panel{
     padding: 0;
 }
+
+#controls .row .col{
+    padding: 5px 10px;
+}
+#controls .row:first-child{
+    margin: 0;
+}
