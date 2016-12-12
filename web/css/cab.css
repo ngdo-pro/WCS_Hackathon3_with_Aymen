@@ -28,3 +28,12 @@ label {
 .row_driver .col.s12{
     padding: 0!important;
 }
+
+.h2, .h3, .h4, .h5 {
+    color: #2bbbad;
+    text-align: center;
+}
+.container .h4 {
+    color: #2bbbad;
+    text-align: center;
+}
