@@ -12,17 +12,17 @@
     <section id="controls">
         <div class="row">
             <div class="col s10 offset-s1">
-                <h5>Sort by</h5>
+                <h5 class="center-align"><span class="white z-depth-3" style="padding: 5px 10px;" >Sort by</span></h5>
             </div>
         </div>
         <div class="row">
             <div class="col s10 offset-s1 center-align control-panel">
-                <a class="control-button-discount red darken-1 small col s6" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-discount'}) }}">{{ 'discount' |trans }}</a>
-                <a class="control-button-likes light-blue darken-2 col s6" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-likes'}) }}">{{ 'likes' |trans }}</a>
+                <a class="control-button-discount red darken-1 small col s6 z-depth-3" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-discount'}) }}">{{ 'discount' |trans }}</a>
+                <a class="control-button-likes light-blue darken-2 col s6 z-depth-3" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-likes'}) }}">{{ 'likes' |trans }}</a>
             </div>
             <div class="col s10 offset-s1 center-align control-panel">
-                <a class="control-button-category amber darken-1 col s6" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-category'}) }}">{{ 'category' |trans }}</a>
-                <a class="control-button-category purple col s6" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-special-offer'}) }}">{{ 'special' |trans }}</a>
+                <a class="control-button-category amber darken-1 col s6 z-depth-3" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-category'}) }}">{{ 'category' |trans }}</a>
+                <a class="control-button-category purple col s6 z-depth-3" href="{{ path('service_index', {'name': service_provider, 'sort': 'sort-by-special-offer'}) }}">{{ 'special' |trans }}</a>
             </div>
         </div>
     </section>
