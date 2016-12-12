@@ -1,0 +1,12 @@
+rent_index:
+    path:     /
+    defaults: { _controller: "HomeBundle:Rent:index" }
+    methods:  GET
+
+rent_show:
+    path:     /{id}/show
+    defaults: { _controller: "HomeBundle:Rent:show" }
+    methods:  GET
+
+
+

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Rent</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rent.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ rent.name }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ rent.address }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ rent.email }}</td>
+            </tr>
+            <tr>
+                <th>Housefeedback</th>
+                <td>{{ rent.houseFeedback }}</td>
+            </tr>
+            <tr>
+                <th>Ownerfeedback</th>
+                <td>{{ rent.ownerFeedback }}</td>
+            </tr>
+            <tr>
+                <th>Size</th>
+                <td>{{ rent.size }}</td>
+            </tr>
+            <tr>
+                <th>Extra</th>
+                <td>{{ rent.extra }}</td>
+            </tr>
+            <tr>
+                <th>English</th>
+                <td>{% if rent.english %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('rent_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

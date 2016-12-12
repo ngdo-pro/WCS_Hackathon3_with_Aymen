@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/rent.css') }}">
+{% endblock %}
+
+{% trans_default_domain 'rent' %}
+{% block body %}
+    <section id="rent" class="valign-wrapper last">
+        <h3 class="valign">{{ 'rentpage.rent-hashtag' |trans({}, 'rentpage') }}</h3>
+    </section>
+    <section id="rentList">
+        <div class="row">
+            {% for rent in rents %}
+                <a href="#modal-{{ rent.id }}" class="open-modal">
+                    <div class="col s10 offset-s1 z-depth-3 rowList ">
+                        <div class="row rent-name">
+                            <span class="left">{{ rent.name }}</span>
+                        </div>
+                        <div class="row rent-infos">
+                            <div class="col s8 valign-wrapper">
+                                <div class="category-list amber darken-1 valign">{{ rent.size }} m²</div>
+                                <div class="likes-list light-blue darken-2 white-text valign">{{ rent.monthlyRentPrice }}</div>
+                                <i class="material-icons valign light-blue darken-2 white-text">euro_symbol</i>
+                            </div>
+                            <div class="col s4">
+                                <img src="{{ asset('img/' ~ rent.img) }}" class="img-responsive thumbnail" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div id="modal-{{ rent.id }}" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <div class="row">
+                            <h4 class="center-align col s12">{{ rent.name }}</h4>
+                        </div>
+                        <div class="row rent-infos-modal valign-wrapper">
+                            <div class="category-list amber darken-1 valign">{{ rent.size |capitalize }} m²</div>
+                            <div class="likes-list light-blue darken-2 white-text valign">{{ rent.monthlyRentPrice }}</div>
+                            <i class="material-icons valign light-blue darken-2 white-text">euro_symbol</i>
+                        </div>
+                        <div class="row">
+                            <img src="{{ asset('img/' ~ rent.img) }}" class="img-responsive thumbnail" />
+                        </div>
+                        <div class="row">
+                            <h5 class="center-align">{{ 'address' |trans}}</h5>
+                            <p class="col s12">{{ rent.address }}</p>
+                        </div>
+                        <div class="row">
+                            <h5 class="center-align">{{ 'owner.email' |trans}}</h5>
+                            <p class="col s12">{{ rent.email }}</p>
+                        </div>
+                        <div class="row">
+                            <h5 class="center-align">{{ 'feedback.house' |trans }}</h5>
+                            <p class="col s12">{{ rent.houseFeedback }}</p>
+                        </div>
+                        <div class="row">
+                            <h5 class="center-align">{{ 'feedback.owner' |trans }}</h5>
+                            <p class="col s12">{{ rent.ownerFeedback }}</p>
+                        </div>
+                        <div class="row">
+                            <h5>{{ 'extra' |trans}} :</h5>
+                            <p class="col s12">{{ rent.extra }}</p>
+                        </div>
+                        <div class="row">
+                            <h5>{{ 'english' |trans}} :</h5>
+                            <p class="col s12">{% if rent.english %}{{ 'yes' |trans }}{% else %}{{ 'no' |trans }}{% endif %}</p>
+                        </div>
+                        <div class="row">
+                            <iframe
+                                    width="100%"
+                                    height="350"
+                                    frameborder="0"
+                                    style="border:0;"
+                                    class="grayscale"
+                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-rF-Vq2l82L91CVwjkQXVJSRGYeBczFo&q={{ rent.address }}%20France" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

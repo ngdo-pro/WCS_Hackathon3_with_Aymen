@@ -1,0 +1,43 @@
+HomeBundle\Entity\Rent:
+    type: entity
+    table: null
+    repositoryClass: HomeBundle\Repository\RentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        address:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        houseFeedback:
+            type: text
+        ownerFeedback:
+            type: text
+        size:
+            type: integer
+        monthlyRentPrice:
+            type: integer
+        extra:
+            type: string
+            length: 255
+        english:
+            type: boolean
+        Img:
+            type: string
+            length: 255
+    manyToOne:
+        owner_type:
+            targetEntity: HomeBundle\Entity\OwnerType
+            joinColumn:
+                name: ownerTypeId
+                referencedColumnName: id
+    lifecycleCallbacks: {  }
