@@ -7,6 +7,8 @@ imports:
     - { resource: "@ServiceBundle/Resources/config/services.yml" }
     - { resource: vendors/easy_admin.yml }
     - { resource: "@CabBundle/Resources/config/services.yml" }
+    - { resource: "@HomeBundle/Resources/config/services.yml" }
+
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration

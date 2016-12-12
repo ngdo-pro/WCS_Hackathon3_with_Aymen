@@ -1,0 +1,8 @@
+address: Adresse
+owner.email: Email
+feedback.house: 'Retours sur la propriété'
+feedback.owner: 'Retours sur le propriétaire'
+extra: Extra
+english: 'Le propriétaire parle anglais ?'
+'yes': Oui
+'no': Non
